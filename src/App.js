@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Basic01 from './study/Basic01';
 
 function App() {
+
+  return <Basic01/>;
+  /*
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +24,7 @@ function App() {
       </header>
     </div>
   );
+  */
 }
 
 export default App;
