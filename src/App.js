@@ -6,6 +6,8 @@ import Practice01 from './practice/Practice01';
 import State02 from './study/State02';
 import Export01 from './study/Export01';
 import Practice02 from './practice/Practice02';
+import Props01 from './study/Props01';
+import Props02 from './study/Props02';
 
 function App() {
 
@@ -14,7 +16,9 @@ function App() {
   // return <Practice01/>;
   // return <Export01/>;
   // return <State02/>;
-  return <Practice02/>;
+  // return <Practice02/>;
+  // return <Props01/>;
+  return <Props02/>;
 
   /*
   return (
