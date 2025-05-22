@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './NewsBlog.css';
+import Modal from './Modal';
 
 function NewsBlog(){
     
@@ -19,6 +20,10 @@ function NewsBlog(){
     
     let [indexArr, setIndexArr] = useState([0,0,0]);
 
+    let [showModal, setShowModal] = useState(false);
+
+    let [selectedTitle, setSelectedTitle] = useState('');
+
     return(<div>
         <div className='black-nav'>
             <h4>Blog Header</h4>
@@ -27,7 +32,15 @@ function NewsBlog(){
 
         <div className='post-list'>
             {/* <h4>{news1}</h4> */}
-            <h4>{news[0]} <span onClick={()=>{
+            <h4 onClick={()=>{
+                if(showModal){
+                    setShowModal(false);
+                } else {
+                    setShowModal(true);
+                }
+                setSelectedTitle(news[0])
+
+            }}>{news[0]} <span onClick={()=>{
                 // setIndex1(index1+1);
 
                 let temp = [...indexArr];
@@ -48,7 +61,11 @@ function NewsBlog(){
 
         <div className='post-list'>
             {/* <h4>{news2}</h4> */}
-            <h4>{news[1]} <span onClick={()=>{
+            <h4 onClick={()=>{
+                setShowModal(!showModal);
+                setSelectedTitle(news[1])
+
+            }}>{news[1]} <span onClick={()=>{
                 // setIndex2(index2+1);
 
                 let temp = [...indexArr];
@@ -61,16 +78,27 @@ function NewsBlog(){
 
         <div className='post-list'>
             {/* <h4>{news3}</h4> */}
-            <h4>{news[2]} <span onClick={()=>{
+            <h4 onClick={()=>{
+                setShowModal(!showModal);
+                setSelectedTitle(news[2])
+
+            }}>{news[2]} <span onClick={(event)=>{
+                event.stopPropagation();    //전파를 막겠다.. 
+                // 속해있는 부모요소의 이벤트처리까지 전파되는걸 막겠다.. 내꺼만 함.
                 // setIndex3(index3+1);
 
                 let temp = [...indexArr];
                 temp[2] += 1;
                 setIndexArr(temp);
-                
+
             }}>❤</span>{indexArr[2]}</h4>
             <p>내용 무</p>
         </div>
+
+        {
+            //showModal == true? <Modal/> : null
+            showModal && <Modal title={selectedTitle}/>
+        }
     </div>
     )
     
