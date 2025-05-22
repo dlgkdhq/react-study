@@ -8,6 +8,8 @@ import Export01 from './study/Export01';
 import Practice02 from './practice/Practice02';
 import Props01 from './study/Props01';
 import Props02 from './study/Props02';
+import Practice03 from './practice/Practice03/Practice03';
+
 
 function App() {
 
@@ -18,7 +20,9 @@ function App() {
   // return <State02/>;
   // return <Practice02/>;
   // return <Props01/>;
-  return <Props02/>;
+  // return <Props02/>;
+  return <Practice03/>;
+
 
   /*
   return (
