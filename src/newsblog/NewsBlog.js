@@ -75,7 +75,7 @@ function NewsBlog() {
                     setNews(temp);
 
                     likeCountArr.push(0);
-                    
+
                     //배열 state 변수 바꾸는 법 : 배열 복사 -> 값 변경/추가/삭제 -> set함수로 원래 배열에 저장
                     setInputText('');
 
@@ -112,6 +112,13 @@ function NewsBlog() {
 
                             }}>❤</span>{likeCountArr[index]}</h4>
                             <p>내용 무</p>
+                            <button onClick={()=>{
+                                let temp = [...news];
+                                temp.splice(index, 1);
+                                setNews(temp);
+
+                                likeCountArr.splice(index, 1);
+                            }}>삭제</button>
                         </div>
                     )
 
