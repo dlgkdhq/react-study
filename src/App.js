@@ -12,6 +12,7 @@ import Practice03 from './practice/Practice03/Practice03';
 import NewsBlog from './newsblog/NewsBlog';
 import Practice04 from './practice/Practice04/Practice04';
 import FoodMarket from './foodmarket/pages/FoodMarket';
+import Practice05 from './practice/Practice05/Practice05';
 
 
 
@@ -28,7 +29,8 @@ function App() {
   // return <Practice03/>;
   // return <NewsBlog/>;
   // return <Practice04/>;
-return <FoodMarket/>;
+// return <FoodMarket/>;
+return <Practice05/>;
 
 
   /*
