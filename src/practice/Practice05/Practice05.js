@@ -5,6 +5,7 @@ import ColorBox from './ColorBox';
 function Practice05() {
 
     let [boxes, setBoxes] = useState(['red', 'blue', 'green', 'black']);
+    //                          index : 0       1       2       3
 
     return (
         <div>
@@ -47,10 +48,21 @@ function Practice05() {
             </div>
 
             {
-                boxes.map((item) => {
-                    // return <div className='box' style={{ backgroundColor: item }}></div>
-                    return <ColorBox bgColor={item}/>
+                boxes.map((item, index) => {
+                    // return <div className='box' style={{ backgroundColor: item }}>
+                    //     <button onClick={()=>{
+                    //         let temp = [...boxes];
+                    //         temp.splice(index, 1);
+                    //         setBoxes(temp);
+                    //     }}>X</button>
+                    // </div>
+
+                    return <ColorBox bgColor={item} index={index} boxes={boxes} setBoxes={setBoxes} />
                 })
+
+                //splice(위치, 삭제할 갯수)
+                //splice(2,1)
+                // let [boxes, setBoxes] = useState(['red', 'blue', 'green', 'black']);
             }
         </div>
     )
