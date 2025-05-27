@@ -16,6 +16,17 @@ function Detail({foods}) {
         return food.id == id;
     })
 
+    // foods.findIndex
+    // if(food == -1) {}
+
+    // console.log(food);
+
+    if(food == undefined){  //잘못된 id값이 들어옴. 해당 id 상품 없음
+        return(
+            <div><h1>존재하지 않는 상품이슈</h1></div>
+        )
+    }
+
     return (
         <Container>
             <Row>
