@@ -174,7 +174,6 @@ function Detail({ foods }) {
                     <p style={styles.fontBigBold}>{food.content}</p>
                     <p className={'text-strong ' + (food.price >= 10000 ? 'price-red' : 'price-blue')}>{food.price}</p>
 
-
                     {/* <p className={['text-strong', food.price >= 10000 ? 'price-red' : 'price-blue'].join(" ")}>{food.price}</p> */}
 
                     <p>
@@ -184,11 +183,18 @@ function Detail({ foods }) {
                         }}>-</Button>
                         <span> {orderCount} </span>
                         <Button variant="dark" onClick={() => {
-                            setOrderCount(orderCount + 1);
+                            if (orderCount < food.stockCount) {
+                                setOrderCount(orderCount + 1);
+                            }
                         }}>+</Button>
                     </p>
 
-                    <Button variant="primary">주문하기</Button>
+                    { 
+                        food.stockCount > 0 ? <Button variant="primary">주문하기</Button> 
+                        : 
+                        <Button variant="danger" disabled>품절</Button>
+                    }
+
                 </Col>
             </Row>
 
