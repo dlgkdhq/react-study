@@ -123,6 +123,13 @@ function Login() {
                             //localStorage.setItem(key, value) or localStorage.getItem(key)
                             localStorage.setItem("token", token);
                             //localStorage.getItem("token")
+
+                            //로그인 성공한 정보 (id || name || nickname)
+                            // -> redux 상태관리에 저장
+                            // dispatch(saveUserId(id));
+
+                            // 나중에 로그인여부 판별을 위해 아이디가 필요한 화면에서는
+                            // let user = useSelector((state)=>{return state.user});
                         }
                         //로그인 성공? 실패?
                         //페이지 전환 처리
